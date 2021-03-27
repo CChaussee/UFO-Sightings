@@ -4,3 +4,9 @@ var tableData = data;
 tableData.forEach(function(report){ 
     console.log(`${report.city}: ${report.state}`);
 
+// build table
+function buildTable (tableData) {
+    tableData.forEach(function(ufoReport) {
+        var row
+    })
+}
