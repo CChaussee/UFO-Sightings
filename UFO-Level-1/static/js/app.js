@@ -1,10 +1,10 @@
 // from data.js
-var tableData = data;
+const tableData = data;
 // testing connection
 tableData.forEach(function(report){ 
     console.log(`${report.city}: ${report.state}`);
 
-var tbody = d3.select("#ufo-tbody");    
+let tbody = d3.select("#ufo-tbody");    
 
 // build table
 function buildTable (tableData) {
@@ -17,5 +17,7 @@ function buildTable (tableData) {
         row.append("td").text(ufoReport.shape);
         row.append("td").text(ufoReport.comments);
     })
-    });
-}
+    }
+})
+
+let submit = d3.select("#filter-btn");
