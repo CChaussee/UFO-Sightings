@@ -4,6 +4,8 @@ var tableData = data;
 tableData.forEach(function(report){ 
     console.log(`${report.city}: ${report.state}`);
 
+var tbody = d3.select("#ufo-tbody");    
+
 // build table
 function buildTable (tableData) {
     tableData.forEach(function(ufoReport) {
@@ -15,5 +17,5 @@ function buildTable (tableData) {
         row.append("td").text(ufoReport.shape);
         row.append("td").text(ufoReport.comments);
     })
-    })
+    });
 }
