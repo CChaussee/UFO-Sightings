@@ -9,7 +9,7 @@ let tbody = d3.select("#ufo-tbody");
 // build table
 function buildTable (tableData) {
     tableData.forEach(function(ufoReport) {
-        var row = tableData.append("tr")
+        let row = tableData.append("tr")
         row.append("td").attr('scope', 'row').text(ufoReport.datetime);
         row.append("td").text(ufoReport.city);
         row.append("td").text(ufoReport.state);
@@ -21,3 +21,10 @@ function buildTable (tableData) {
 })
 
 let submit = d3.select("#filter-btn");
+let row = d3.select("tbody").selectAll("td");
+let inputElement = d3.select("#datetime");
+let inputValue = inputElement.property("value");
+let filteredData = tableData;
+let filtered = filteredData.filter(tbody => tbody.datetime === inputValue);
+
+buildTable(filtered);
