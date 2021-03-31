@@ -4,7 +4,7 @@ const tableData = data;
 tableData.forEach(function(report){ 
     console.log(`${report.city}: ${report.state}`);
 
-let tbody = d3.select("#ufo-tbody");    
+let tbody = d3.select("#ufo-table");    
 
 // build table
 function buildTable (tableData) {
@@ -19,7 +19,7 @@ function buildTable (tableData) {
     })
     }
 })
-
+console.log(tableData)
 let submit = d3.select("#filter-btn");
 let row = d3.select("tbody").selectAll("td");
 let inputElement = d3.select("#datetime");
@@ -27,4 +27,4 @@ let inputValue = inputElement.property("value");
 let filteredData = tableData;
 let filtered = filteredData.filter(tbody => tbody.datetime === inputValue);
 
-buildTable(filtered);
+console.log(filteredData);
