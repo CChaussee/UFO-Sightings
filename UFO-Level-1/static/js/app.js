@@ -3,34 +3,12 @@ let tableData = data;
 // testing connection
 tableData.forEach(function(report){ 
     console.log(`${report.city}: ${report.state}`)});
-
+//reference table body and not table like before
 let tbody = d3.select("tbody");    
-
-// build table
-function buildTable(tableData) {
-    tableData.forEach( row => {
-        const row1 = tbody.append("tr") 
-        let stick = row1.append("td")
-        
-        Object.values(row).forEach( event => {
-            stick.text(event)
-        })
-        
-    
-})};
-function filtering (tableData) {tbody.html("")
-   let stuff = filteredData.filter(tbody => tbody.datetime === inputValue)
-buildTable(stuff)
-}
-
-let row = d3.select("tbody").selectAll("td");
-
-console.log(tableData)
+// when search button is clicked
 let submit = d3.select("#filter-btn");
-let inputElement = d3.select("#datetime");
-let inputValue = inputElement.property("value");
-let filteredData = tableData;
-
-let search = d3.select("filter-btn").on("click", filtering);
-
-buildTable(tableData);
+submit.on("click", function() {
+    let datetimeSearch = d3.select("datime");
+    let datetimeValue = d3.datetimeSearch.property("value");
+})
+console.log(datetimeSearch);
