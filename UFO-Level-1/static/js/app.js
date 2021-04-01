@@ -1,10 +1,10 @@
 // from data.js
-const tableData = data;
+let tableData = data;
 // testing connection
 tableData.forEach(function(report){ 
     console.log(`${report.city}: ${report.state}`)});
 
-let tbody = d3.select("#ufo-table");    
+let tbody = d3.select("tbody");    
 
 // build table
 function buildTable(tableData) {
